@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Muscle Repositroy</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   <nav>                  
+    <!-- Logo -->
+    <a class="logo"><img src="images/png/logo-no-background.png" id="Logo" alt="Muscle Repository Logo" width="50%" height="50%"></a>
+    <div class="Container">
+      <!-- Navbar -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="muscles.html">Muscles</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><input class="nav-check" type="checkbox" id="switch" name="theme" autocomplete="off"/><label class="nav-label" for="switch"></label></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="info">
+    <div class="sec1">
+      <h1>BMI Calculator</h1>
+      <div class="Calculator">
+      <form id="bmi-calculator" class="bmi-calculator" method="POST">
+        <div class="bmi-units">
+          <div class="bmi-sel">
+            <input id="imperial" class="bmi-but" type="radio" name="unit_radio" value="imp_radio" checked="" onclick="changeInputDisplay()" aria-label="Imperial units">
+            <label class="calc_label" title="Imperial" for="imperial">Imperial</label>
+          </div>
+          <div class="bmi-sel">
+            <input id="metric" class="bmi-but" type="radio" name="unit_radio" value="met_radio" onclick="changeInputDisplay()" aria-label="Imperial units">
+            <label class="calc_label" title="Metric" for="metric">Metric</label>
+          </div>
+        </div>
+        
+        <div id="bmiImperial" class="unit-inputI">
+          <div class="bmi-calculator-units-grid">
+            <label class="col--3" for="imp_height">Height:</label> 
+            <input class="imp_box" type="text" id="imp_ft_txt" maxlength="1" aria-label="Feet"> 
+            <label class="col--2" for="feet">ft</label> 
+            <input class="imp_box" type="text" id="imp_ins_txt" maxlength="2" aria-label="Inches"> 
+            <label class="col--2" for="inches">ins</label></div>
+          
+          <div class="bmi-calculator-units-grid ">
+            <label class="col--3" for="imp_weight">Weight:</label>
+            <input class="imp_box" type="text" id="imp_st_txt" value="" maxlength="2" aria-label="Stones">
+            <label class="col--2" for="stone">st</label>
+            <input class="imp_box" type="text" id="imp_lbs_txt" maxlength="3" aria-label="Pounds">
+            <label class="col--2" for="pounds">lbs</label></div>
+        </div>
+        
+        <div id="bmiMetric" class="unit-inputM">
+          <div class="bmi-calculator-units-grid">
+            <label class="col--3" for="met_height">Height:</label>
+            <input class="imp_box" type="text" id="met_height_txt" value="" maxlength="4" aria-label="Height">
+            <select class="metric-choice" id="metric-choice">
+            <option value="metres">metres</option>
+            <option value="centimetres">Centimetres</option>
+            </select>
+          </div>
+          
+          <div class="bmi-calculator-units-grid">
+            <label class="col--3" for="met_height">Weight:</label>
+            <input class="imp_box" type="text" id="met_kgs_txt" value="" maxlength="4" aria-label="Weight">
+            <label class="col--3" for="kilos">Kilograms</label>
+          </div>
+        </div>
+        
+        <div class="bmi-calculator_buttons">
+          <button type="button" id="calc_btn" class="calc_btn-button" title="Calculate BMI" type="submit" name="calc_btn" onclick="calcBMI()">
+            <span class="button__text">Calculate</span>
+          </button> 
+          <button type="button" id="reset_btn" class="reset_btn-button" title="Reset Form" name="reset_btn" onclick="clearFourmBMI()"> 
+            <span class="sec-text">Reset</span> 
+          </button>
+        </div>
+      </form>
+      </div>
+      <div class="Output">
+        <div class="bmi-calculator-result">
+          <h3 class="h3">BMI = 
+            <span class="h3" id="BMI-result"></span>
+          </h3>
+        </div>
+            <ul class="BMI-list">
+              <li class="BMI-list">Less than 18.5 = Underweight</li>
+              <li class="BMI-list">Between 18.5 - 24.9 = Healthy Weight</li>
+              <li class="BMI-list">Between 25 - 29.9 = Overweight</li>
+              <li class="BMI-list">Over 30 = Obese</li>
+            </ul>
+        </div>
+      </div>
+  </div>
+
+</body>
+<script src="script.js"></script>
+</html>
